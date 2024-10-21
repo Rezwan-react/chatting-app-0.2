@@ -1,0 +1,28 @@
+.card{
+    @apply w-[450px] h-[350px] rounded-[15px] flex flex-col justify-between 
+}  
+.title{
+    @apply text-2xl font-semibold text-[#fff] p-[10px] 
+}
+.user_data{
+    @apply flex gap-[25px] items-center p-[10px]
+}
+.user{
+    @apply flex gap-1 items-center p-[10px]
+}
+
+.image{
+    @apply w-[60px] h-[60px] border-[2px] border-[#60A5FA] rounded-full mr-4
+}
+.text h2{
+    @apply text-xl font-normal font-poppins text-[#fff]
+}
+.text p{
+    @apply text-sm font-normal font-poppins text-[#fff]
+}
+.follow{
+    @apply  rounded-[25px] bg-black text-xl text-white px-[15px] py-[8px] font-medium font-poppins
+}
+.follow:hover{
+    @apply bg-[#2c3136]
+}

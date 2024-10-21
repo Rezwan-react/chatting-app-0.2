@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useDispatch } from 'react-redux';
 import { userData } from '../../slices/UserSlice';
+import { getDatabase, ref, set } from "firebase/database";
 
 const Login = () => {
   // =================================== variabie part start
@@ -21,7 +22,7 @@ const Login = () => {
   const dispatch                           = useDispatch()
   // ====================== firebase variabie part stsrt
   const auth = getAuth();
-
+  const db = getDatabase();
 
   // =================================== functions part start
   const handelEmail =(e)=>{
@@ -73,8 +74,19 @@ const Login = () => {
               theme: "dark",
               transition: Bounce,
              });
+            //  ====================== navigate to home page
              navigate('/')
+            //  ========================== set data to redux
              dispatch(userData(user))
+            //  ======================== set data to localhost
+              localStorage.setItem('userData', JSON.stringify(user))
+
+              set(ref(db, 'AllUsers/' + user.uid), {
+                userName:user.displayName,
+                userEmail:user.email,
+                userPhoto:user.photoURL,
+                userId:user.uid
+              });
             }
       })
       .catch((error) => {

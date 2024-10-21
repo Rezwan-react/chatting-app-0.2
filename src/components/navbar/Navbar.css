@@ -1,0 +1,21 @@
+.menu{
+    @apply w-[250px] h-screen flex flex-col gap-5 bg-gray-800 shadow-[0px_0px_20px_rgba(0,0,0,0.3)]
+}
+.menu_profile{
+    @apply flex flex-col justify-center items-center 
+}
+.menu_profile .menu_img{
+    @apply w-[100px] h-[100px] border-[2px] border-[#60A5FA] rounded-full mt-2
+}
+.menu_profile .menu_name h1{
+    @apply text-xl font-normal font-poppins text-[#fff]
+}
+.maine_menu ul{
+    @apply flex flex-col gap-4 mt-3 
+}
+.maine_menu ul .yesActive{
+    @apply w-[250px]  text-2xl font-medium font-poppins h-16 relative hover:bg-gray-700 transition-all duration-300 flex justify-center items-center px-5 gap-3 rounded-lg text-blue-400 bg-gray-700 ring-blue-500 ring-2 select-none cursor-pointer
+}
+.maine_menu ul .noActive{
+    @apply w-[250px] text-[#fff] text-2xl font-medium font-poppins h-16 relative hover:bg-gray-700 transition-all duration-300 flex justify-center items-center px-5 gap-3 rounded-lg 
+}
